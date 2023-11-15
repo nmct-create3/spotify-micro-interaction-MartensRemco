@@ -1,5 +1,5 @@
 @import "https://unpkg.com/open-props/easings.min.css";
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
 :root {
     /* spotify colors*/
     --spotify-green: #1ed760;
@@ -16,6 +16,7 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 1rem;
+    font-family: 'Manrope', sans-serif;
 }
 
 img,
@@ -27,11 +28,19 @@ svg {
 
 /* global page styles */
 
-html {}
+html {
+    background-color: var(--spotify-black);
+    color: var(--spotify-white);
+}
 
 /* center everything */
 
-body {}
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+}
 
 /*
     Object: Button reset
@@ -65,15 +74,55 @@ body {}
 /*
     Toggle button
 */
+.toggle__icon {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
 
+.added {
+    display: none;
+}
 /*
     Album
 */
+.album{
+    max-width: 350px;
+    background-color: var(--spotify-darkGrey);
+    padding: 20px;
+    border-radius: 10px;
+}
+.album__header {
+    display: grid;
+    grid-template-columns: auto 1fr 2rem;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+    align-items: center;
+}
 
+.album__title {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+}
+
+.album__artist {
+    grid-row: 2;
+    grid-column: 1 / span 2;
+    color: var(--spotify-grey);
+}
+.album__action {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+    display: grid;
+    place-items: flex-end;
+}
+.album__img{
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+/* Adjust the size of the SVG icons */
 /*
     Utitlities
 */
-
 .color-grey {
     color: var(--spotify-grey);
 }
